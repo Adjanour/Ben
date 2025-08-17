@@ -4,268 +4,364 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Our Services | Bluespek Company Limited</title>
-    <link rel="stylesheet" href="kimo.css">
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&family=Open+Sans:wght@400;500;600&family=Poppins:wght@400;500;600&display=swap" rel="stylesheet">
     <style>
+        /* Additional styles specific to services page */
         .services-hero {
-            background: url('services-hero.jpg') no-repeat center center;
-            background-size: cover;
-            color: #fff;
-            text-align: center;
-            padding: 80px 20px 40px 20px;
-            text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
+            height: 50vh;
+            min-height: 400px;
         }
-        .services-list-section {
-            padding: 60px 5%;
-            background-color: #f8f9fa;
+        
+        .service-detail {
+            padding: 80px 0;
         }
-        .services-list-section h2 {
-            color: #0077b6;
-            font-size: 2.5em;
-            margin-bottom: 30px;
-            text-align: center;
-            position: relative;
+        
+        .service-detail-card {
+            background-color: var(--white);
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 10px 30px var(--shadow-color);
+            margin-bottom: 50px;
         }
-        .services-list-section h2::after {
-            content: '';
-            position: absolute;
-            width: 60px;
-            height: 4px;
-            background: #ff9900;
-            bottom: -10px;
-            left: 50%;
-            transform: translateX(-50%);
+        
+        .service-detail-content {
+            padding: 40px;
         }
-        .services-grid {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 40px;
-            justify-content: center;
+        
+        .service-detail-image {
+            height: 300px;
+            overflow: hidden;
         }
-        .service-card {
-            background: #fff;
-            border-radius: 12px;
-            box-shadow: 0 4px 8px rgba(0,0,0,0.08);
-            padding: 30px 24px;
-            width: 320px;
-            text-align: center;
-            transition: transform 0.3s, box-shadow 0.3s;
-        }
-        .service-card:hover {
-            transform: translateY(-8px);
-            box-shadow: 0 8px 16px rgba(0,0,0,0.15);
-        }
-        .service-card img {
-            width: 80px;
-            height: 80px;
+        
+        .service-detail-image img {
+            width: 100%;
+            height: 100%;
             object-fit: cover;
-            border-radius: 50%;
-            margin-bottom: 18px;
         }
-        .service-card h3 {
-            color: #0077b6;
-            margin-bottom: 12px;
-            font-size: 1.4em;
+        
+        .service-features {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 30px;
+            margin-top: 30px;
         }
-        .service-card p {
-            color: #555;
-            font-size: 1.05em;
-            margin-bottom: 0;
+        
+        .service-feature {
+            background-color: var(--light-bg);
+            padding: 25px;
+            border-radius: 10px;
+            transition: var(--transition-medium);
         }
-        @media (max-width: 900px) {
-            .services-grid {
-                flex-direction: column;
-                align-items: center;
+        
+        .service-feature:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 20px var(--shadow-color);
+        }
+        
+        .service-feature-icon {
+            color: var(--primary-color);
+            font-size: 2rem;
+            margin-bottom: 15px;
+        }
+        
+        .service-feature h4 {
+            margin-bottom: 10px;
+            color: var(--primary-color);
+        }
+        
+        @media (max-width: 768px) {
+            .service-detail-content {
+                padding: 30px;
             }
         }
-        .back-home {
-            display: block;
-            margin: 30px auto 0 auto;
-            padding: 12px 32px;
-            background: #0077b6;
-            color: #fff;
-            border: none;
-            border-radius: 6px;
-            font-weight: bold;
-            text-decoration: none;
-            transition: background 0.3s;
-            text-align: center;
-        }
-        .back-home:hover {
-            background: #ff9900;
-            color: #fff;
-        }
     </style>
+<script src="https://sites.super.myninja.ai/_assets/ninja-daytona-script.js"></script>
 </head>
 <body>
-
-    <header>
-        <div class="logo">
-            <img src="logo.jpg" alt="Bluespek Logo">
-            <h1>BLUESPEK CO. LTD.</h1>
+    <!-- Header -->
+    <header class="header scrolled" id="home">
+        <div class="container">
+            <div class="header-content">
+                <div class="logo">
+                    <a href="index.html">
+                        <img src="https://via.placeholder.com/50x50/0056a6/ffffff?text=B" alt="Bluespek Logo">
+                        <span>BLUESPEK CO. LTD.</span>
+                    </a>
+                </div>
+                <nav class="nav-menu">
+                    <ul>
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="index.html#about">About Us</a></li>
+                        <li><a href="services.html" class="active">Services</a></li>
+                        <li><a href="index.html#contact">Contact</a></li>
+                    </ul>
+                </nav>
+                <div class="mobile-menu-toggle">
+                    <i class="fas fa-bars"></i>
+                </div>
+            </div>
         </div>
-        <nav>
-            <ul>
-                <li><a href="kimo.html#home">Home</a></li>
-                <li><a href="kimo.html#about">About Us</a></li>
-                <li><a href="services.html" class="active">Services</a></li>
-                <li><a href="kimo.html#contact">Contact</a></li>
-            </ul>
-        </nav>
     </header>
 
-    <section class="services-hero">
-    <h2>Our Services</h2>
-    <p>Bluespek Company Limited delivers top-notch supply and procurement solutions tailored to your needs.</p>
-    
-    <div class="strengths-mission-container">
-        <div class="our-strengths">
-            <h3>Our Strengths</h3>
-            <ul>
-                <li>Registered with Ghana's Public Procurement Authority</li>
-                <li>Transparent, competitive quotations</li>
-                <li>OEM-aligned sourcing</li>
-                <li>Timely delivery and responsive service</li>
-            </ul>
-        </div>
-        <div class="our-mission">
-            <h3>Our Mission</h3>
-            <p>
-                Our mission is to make procurement seamless—so you can focus on building, innovating, and delivering.
-            </p>
-        </div>
-    </div>
-</section>
-
-<style>
-    body {
-    background-image: url('haninhand.jpg'); /* replace with your background image */
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
-    background-attachment: fixed; /* optional: makes background stay in place */
-}
-.strengths-mission-container {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    gap: 40px;
-    margin-top: 40px;
-}
-.our-strengths, .our-mission {
-    background: rgba(255,255,255,0.85);
-    border-radius: 10px;
-    padding: 30px 25px;
-    box-shadow: 0 4px 10px rgba(0,0,0,0.10);
-    max-width: 370px;
-    min-width: 270px;
-}
-.our-strengths h3, .our-mission h3 {
-    color: #ff9900;
-    margin-bottom: 18px;
-    font-size: 1.35em;
-    letter-spacing: 1px;
-    text-align: center;
-}
-.our-strengths ul {
-    list-style: none;
-    padding: 0;
-    margin: 0;
-}
-.our-strengths ul li {
-    margin-bottom: 14px;
-    font-size: 1.08em;
-    padding-left: 28px;
-    position: relative;
-    color: #0077b6;
-}
-.our-strengths ul li:before {
-    content: "\f058";
-    font-family: "Font Awesome 6 Free";
-    font-weight: 900;
-    color: #ff9900;
-    position: absolute;
-    left: 0;
-    top: 1px;
-    font-size: 1.15em;
-}
-.our-mission p {
-    color: #333;
-    font-size: 1.08em;
-    line-height: 1.5;
-    text-align: center;
-}
-@media (max-width: 900px) {
-    .strengths-mission-container {
-        flex-direction: column;
-        align-items: center;
-    }
-    .our-strengths, .our-mission {
-        width: 100%;
-        max-width: 450px;
-    }
-}
-</style>
-
-    <section class="services-list-section">
-    <h2>What We Offer</h2>
-    <div class="services-grid">
-        <div class="service-card">
-            <img src="IT.jpg" alt="ICT & Electronics">
-            <h3>General Supply Services</h3>
-            <p>Reliable provision of ICT,Office construction and household items for projects and operations across Ghana.</p>
-            <ul style="text-align:left; margin-top: 15px; color: #555; font-size: 1em;">
-        <li>Laptops,Printers,Monitors & Acessories</li>
-        <li>Toners,Office Stationery,Office Furniture</li>
-        <li>Construction Equipment & Materials</li>
-        <li>Household Goods & Stationery Supplies</li>
-        <li>PPE & Safety Items</li>
-    </ul>
-    </div>
-
-        <div class="service-card">
-    <img src="stationery.jpg" alt="Office Stationery">
-    <h3>Procurement Advisory & Tender Support</h3>
-    <p>Professional support for BoQs, RFQs, Tenders and documentations tailored for public and private procurement.</p>
-    <ul style="text-align:left; margin-top: 15px; color: #555; font-size: 1em;">
-        <li>BoQ Customization</li>
-        <li>Bid Packaging</li>
-        <li>Tender Compliance</li>
-        <li>Proposal Writing & Templates</li>
-    </ul>
-</div>
-    
-         <div class="service-card">
-                <img src="tech.jpg" alt="Construction Materials">
-                <h3>QEM Liaison & Authorization</h3>
-                <p>We liaise directly with Oridinal Equipment Manufacturers to support authentic product sourcing and documentation.</p>
-                <ul style="text-align:left; margin-top: 15px; color: #555; font-size: 1em;">
-        <li>Brand-verified Quotes</li>
-        <li>QEM Authorization Letters</li>
-        <li>Warranty Support</li>
-        <li>Technical Product advisory</li>
-    </ul>
+    <!-- Hero Section -->
+    <section class="hero services-hero">
+        <div class="hero-overlay"></div>
+        <div class="container">
+            <div class="hero-content">
+                <h1 class="animate-fade-in">Our Services</h1>
+                <p class="animate-fade-in">Bluespek Company Limited delivers top-notch supply and procurement solutions tailored to your needs.</p>
             </div>
-
-            <div class="service-card">
-                <img src="pack.jpg" alt="Janitorial & Household">
-                <h3>Logistic & Delivery Management</h3>
-                <p>Doorstep delivery, on-site handovers, and coordinated distribution for your procured items</p>
-                <ul style="text-align:left; margin-top: 15px; color: #555; font-size: 1em;">
-        <li>Regional & Local Delivery</li>
-        <li>On-site Drop-offs</li>
-        <li>Proof-of-Delivery Documentation</li>
-        <li>Bulk Shipping Management</li>
-    </ul>
-            </div>
-    </div>
-
-        <a href="kimo.html" class="back-home"><i class="fas fa-arrow-left"></i> Back to Home</a>
+        </div>
     </section>
 
-    <footer>
-        <p>Company registration number | PPA Registered | © 2025 Bluespek Company Ltd.</p>
+    <!-- Services Detail Section -->
+    <section class="service-detail">
+        <div class="container">
+            <div class="section-header">
+                <h2>Comprehensive Procurement Solutions</h2>
+                <div class="section-divider"></div>
+                <p>Our mission is to make procurement seamless—so you can focus on building, innovating, and delivering.</p>
+            </div>
+            
+            <!-- General Supply Services -->
+            <div class="service-detail-card">
+                <div class="service-detail-image">
+                    <img src="https://images.unsplash.com/photo-1581092921461-eab10380ed66?ixlib=rb-1.2.1&auto=format&fit=crop&w=1500&q=80" alt="General Supply Services">
+                </div>
+                <div class="service-detail-content">
+                    <h3>General Supply Services</h3>
+                    <p>Reliable provision of ICT, Office construction and household items for projects and operations across Ghana. We ensure timely delivery and competitive pricing for all your supply needs.</p>
+                    
+                    <div class="service-features">
+                        <div class="service-feature">
+                            <div class="service-feature-icon">
+                                <i class="fas fa-laptop"></i>
+                            </div>
+                            <h4>ICT Equipment</h4>
+                            <p>Laptops, Printers, Monitors & Accessories for all your technology needs.</p>
+                        </div>
+                        <div class="service-feature">
+                            <div class="service-feature-icon">
+                                <i class="fas fa-pen"></i>
+                            </div>
+                            <h4>Office Supplies</h4>
+                            <p>Toners, Office Stationery, Office Furniture for professional workspaces.</p>
+                        </div>
+                        <div class="service-feature">
+                            <div class="service-feature-icon">
+                                <i class="fas fa-hard-hat"></i>
+                            </div>
+                            <h4>Construction Materials</h4>
+                            <p>Construction Equipment & Materials for building projects.</p>
+                        </div>
+                        <div class="service-feature">
+                            <div class="service-feature-icon">
+                                <i class="fas fa-shield-alt"></i>
+                            </div>
+                            <h4>Safety Equipment</h4>
+                            <p>PPE & Safety Items for workplace protection and compliance.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Procurement Advisory -->
+            <div class="service-detail-card">
+                <div class="service-detail-image">
+                    <img src="https://images.unsplash.com/photo-1450101499163-c8848c66ca85?ixlib=rb-1.2.1&auto=format&fit=crop&w=1500&q=80" alt="Procurement Advisory">
+                </div>
+                <div class="service-detail-content">
+                    <h3>Procurement Advisory & Tender Support</h3>
+                    <p>Professional support for BoQs, RFQs, Tenders and documentations tailored for public and private procurement. Our expert team ensures compliance and maximizes your chances of success.</p>
+                    
+                    <div class="service-features">
+                        <div class="service-feature">
+                            <div class="service-feature-icon">
+                                <i class="fas fa-file-alt"></i>
+                            </div>
+                            <h4>BoQ Customization</h4>
+                            <p>Detailed Bill of Quantities customized to your specific project requirements.</p>
+                        </div>
+                        <div class="service-feature">
+                            <div class="service-feature-icon">
+                                <i class="fas fa-box"></i>
+                            </div>
+                            <h4>Bid Packaging</h4>
+                            <p>Professional bid preparation and packaging to meet tender requirements.</p>
+                        </div>
+                        <div class="service-feature">
+                            <div class="service-feature-icon">
+                                <i class="fas fa-check-circle"></i>
+                            </div>
+                            <h4>Tender Compliance</h4>
+                            <p>Ensuring all documentation meets regulatory and tender-specific requirements.</p>
+                        </div>
+                        <div class="service-feature">
+                            <div class="service-feature-icon">
+                                <i class="fas fa-pencil-alt"></i>
+                            </div>
+                            <h4>Proposal Writing</h4>
+                            <p>Professional proposal writing and templates for effective communication.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- OEM Liaison -->
+            <div class="service-detail-card">
+                <div class="service-detail-image">
+                    <img src="https://images.unsplash.com/photo-1521791055366-0d553872125f?ixlib=rb-1.2.1&auto=format&fit=crop&w=1500&q=80" alt="OEM Liaison">
+                </div>
+                <div class="service-detail-content">
+                    <h3>OEM Liaison & Authorization</h3>
+                    <p>We liaise directly with Original Equipment Manufacturers to support authentic product sourcing and documentation. This ensures you receive genuine products with full warranty coverage.</p>
+                    
+                    <div class="service-features">
+                        <div class="service-feature">
+                            <div class="service-feature-icon">
+                                <i class="fas fa-file-invoice"></i>
+                            </div>
+                            <h4>Brand-verified Quotes</h4>
+                            <p>Authentic quotations directly from authorized manufacturers and distributors.</p>
+                        </div>
+                        <div class="service-feature">
+                            <div class="service-feature-icon">
+                                <i class="fas fa-certificate"></i>
+                            </div>
+                            <h4>OEM Authorization Letters</h4>
+                            <p>Official documentation confirming product authenticity and authorization.</p>
+                        </div>
+                        <div class="service-feature">
+                            <div class="service-feature-icon">
+                                <i class="fas fa-shield-alt"></i>
+                            </div>
+                            <h4>Warranty Support</h4>
+                            <p>Full manufacturer warranty support and documentation for all products.</p>
+                        </div>
+                        <div class="service-feature">
+                            <div class="service-feature-icon">
+                                <i class="fas fa-headset"></i>
+                            </div>
+                            <h4>Technical Advisory</h4>
+                            <p>Expert technical product advisory to ensure you get the right solutions.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Logistics & Delivery -->
+            <div class="service-detail-card">
+                <div class="service-detail-image">
+                    <img src="https://images.unsplash.com/photo-1566576912321-d58ddd7a6088?ixlib=rb-1.2.1&auto=format&fit=crop&w=1500&q=80" alt="Logistics">
+                </div>
+                <div class="service-detail-content">
+                    <h3>Logistic & Delivery Management</h3>
+                    <p>Doorstep delivery, on-site handovers, and coordinated distribution for your procured items. Our logistics solutions ensure your items arrive safely and on time.</p>
+                    
+                    <div class="service-features">
+                        <div class="service-feature">
+                            <div class="service-feature-icon">
+                                <i class="fas fa-truck"></i>
+                            </div>
+                            <h4>Regional & Local Delivery</h4>
+                            <p>Comprehensive delivery services throughout Ghana and neighboring regions.</p>
+                        </div>
+                        <div class="service-feature">
+                            <div class="service-feature-icon">
+                                <i class="fas fa-box-open"></i>
+                            </div>
+                            <h4>On-site Drop-offs</h4>
+                            <p>Direct delivery to your project site or office location with installation support.</p>
+                        </div>
+                        <div class="service-feature">
+                            <div class="service-feature-icon">
+                                <i class="fas fa-clipboard-check"></i>
+                            </div>
+                            <h4>Delivery Documentation</h4>
+                            <p>Comprehensive proof-of-delivery documentation for your records.</p>
+                        </div>
+                        <div class="service-feature">
+                            <div class="service-feature-icon">
+                                <i class="fas fa-shipping-fast"></i>
+                            </div>
+                            <h4>Bulk Shipping</h4>
+                            <p>Efficient management of large shipments and bulk orders.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="cta">
+        <div class="container">
+            <div class="cta-content">
+                <h2>Ready to streamline your procurement process?</h2>
+                <p>Contact us today for a consultation and discover how we can support your supply chain needs.</p>
+                <div class="cta-buttons">
+                    <a href="index.html#contact" class="btn btn-light">Contact Us</a>
+                    <a href="https://wa.me/233242148891" class="btn btn-secondary">WhatsApp Us</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-logo">
+                    <img src="https://via.placeholder.com/50x50/0056a6/ffffff?text=B" alt="Bluespek Logo">
+                    <h3>BLUESPEK CO. LTD.</h3>
+                    <p>Reliable Supply. Smart Procurement.</p>
+                </div>
+                <div class="footer-links">
+                    <h3>Quick Links</h3>
+                    <ul>
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="index.html#about">About Us</a></li>
+                        <li><a href="services.html">Services</a></li>
+                        <li><a href="index.html#contact">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="footer-services">
+                    <h3>Our Services</h3>
+                    <ul>
+                        <li>General Supply Services</li>
+                        <li>Procurement Advisory</li>
+                        <li>OEM Liaison & Authorization</li>
+                        <li>Logistics & Delivery</li>
+                    </ul>
+                </div>
+                <div class="footer-contact">
+                    <h3>Contact Info</h3>
+                    <p><i class="fas fa-map-marker-alt"></i> P.O. Box MD 1039, Madina-Accra</p>
+                    <p><i class="fas fa-envelope"></i> info@bluespek.com</p>
+                    <p><i class="fas fa-phone-alt"></i> +233 24 214 8891</p>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>Company registration number | PPA Registered | © 2025 Bluespek Company Ltd.</p>
+                <div class="social-icons">
+                    <a href="#"><i class="fab fa-facebook-f"></i></a>
+                    <a href="#"><i class="fab fa-twitter"></i></a>
+                    <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                </div>
+            </div>
+        </div>
     </footer>
+
+    <!-- Back to Top Button -->
+    <a href="#home" class="back-to-top active">
+        <i class="fas fa-arrow-up"></i>
+    </a>
+
+    <!-- JavaScript -->
+    <script src="script.js"></script>
 </body>
 </html>
